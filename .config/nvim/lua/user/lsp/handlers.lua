@@ -44,19 +44,26 @@ M.setup = function()
   })
 end
 
-local function lsp_highlight_document(client)
+local function lsp_highlight_document(client, bufnr)
   -- Set autocommands conditional on server_capabilities
-  if client.resolved_capabilities.document_highlight then
-    vim.api.nvim_exec(
-      [[
-      augroup lsp_document_highlight
-        autocmd! * <buffer>
-        autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-        autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-      augroup END
-    ]],
-      false
-    )
+  if client.server_capabilities.documentHighlightProvider then
+    vim.api.nvim_create_augroup("lsp_document_highlight", {
+      clear = false,
+    })
+    vim.api.nvim_clear_autocmds {
+      buffer = bufnr,
+      group = "lsp_document_highlight",
+    }
+    vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+      buffer = bufnr,
+      group = "lsp_document_highlight",
+      callback = vim.lsp.buf.document_highlight,
+    })
+    vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
+      buffer = bufnr,
+      group = "lsp_document_highlight",
+      callback = vim.lsp.buf.clear_references,
+    })
   end
 end
 
@@ -81,15 +88,29 @@ local function lsp_keymaps(bufnr)
   )
   vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
-  vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
+    vim.api.nvim_buf_create_user_command(bufnr, "Format", function()
+    vim.lsp.buf.format { async = true }
+  end, {})
 end
 
 M.on_attach = function(client, bufnr)
-  if client.name == "tsserver" then
-    client.resolved_capabilities.document_formatting = false
+  if client.name == "sumneko_lua" then
+    client.server_capabilities.documentFormattingProvider = false
+    client.server_capabilities.documentRangeFormattingProvider = false
   end
+
+  if client.name == "solargraph" then
+    client.server_capabilities.documentFormattingProvider = false
+    client.server_capabilities.documentRangeFormattingProvider = false
+  end
+
+  if client.name == "tsserver" then
+    client.server_capabilities.documentFormattingProvider = false
+    client.server_capabilities.documentRangeFormattingProvider = false
+  end
+
   lsp_keymaps(bufnr)
-  lsp_highlight_document(client)
+  lsp_highlight_document(client, bufnr)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()

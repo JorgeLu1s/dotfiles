@@ -81,6 +81,7 @@ return packer.startup(function(use)
   use "williamboman/mason-lspconfig.nvim"
   use "neovim/nvim-lspconfig" -- enable LSP
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+  use "b0o/SchemaStore.nvim" -- for jsonls
   -- Telescope
   use "nvim-telescope/telescope.nvim"
   -- Treesitter
