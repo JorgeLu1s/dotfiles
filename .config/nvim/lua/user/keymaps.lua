@@ -65,10 +65,19 @@ keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 keymap("n", "<leader>p", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
-keymap("n", "<leader>t", ":Telescope find_files<cr>", opts)
+keymap("n", "<leader>ff", ":Telescope find_files<cr>", opts)
+keymap("n", "<leader>fr", ":Telescope oldfiles<cr>", opts)
 keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
-
+keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
+keymap("n", "<leader>fc", "<cmd>Telescope colorscheme<cr>", opts)
 
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
-keymap("n", "<leader>c", ":bdelete<cr>", opts)
+keymap("n", "<leader>c", ":bp<BAR>bd#<cr>", opts)
 keymap("n", "<leader>f", ":Format<cr>", opts)
+
+vim.api.nvim_create_user_command('Todo', ':vs ~/Documents/procore/procore.todo.md', {})
+keymap("n", "<leader>t", ":Todo<cr>", opts)
+
+keymap("n", "<leader>bl", ":lua vim.o.background = 'light'<cr>", opts)
+keymap("n", "<leader>bd", ":lua vim.o.background = 'dark'<cr>", opts)

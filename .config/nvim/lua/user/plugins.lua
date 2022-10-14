@@ -36,6 +36,10 @@ packer.init {
       return require("packer.util").float { border = "rounded" }
     end,
   },
+  profile = {
+    enable = true,
+    threshold = 0, -- the amount in ms that a plugins load time must be over for it to be included in the profile
+  },
 }
 
 -- Install your plugins here
@@ -53,10 +57,13 @@ return packer.startup(function(use)
   use "nvim-lualine/lualine.nvim"
   use "lewis6991/impatient.nvim"
   use "goolord/alpha-nvim"
+  use "aserebryakov/vim-todo-lists"
 
   -- Colorschemes
   use "LunarVim/onedarker.nvim"
   use "folke/tokyonight.nvim"
+  use "rose-pine/neovim"
+  use "EdenEast/nightfox.nvim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- the completiton plugin
