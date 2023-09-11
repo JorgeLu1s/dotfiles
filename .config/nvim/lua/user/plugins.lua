@@ -64,6 +64,8 @@ return packer.startup(function(use)
   use "folke/tokyonight.nvim"
   use "rose-pine/neovim"
   use "EdenEast/nightfox.nvim"
+  use { "catppuccin/nvim", as = "catppuccin" }
+  use 'navarasu/onedark.nvim'
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- the completiton plugin

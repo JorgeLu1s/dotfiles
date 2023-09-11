@@ -16,6 +16,6 @@ null_ls.setup {
     },
     formatting.rubocop,
     diagnostics.rubocop,
-    -- formatting.stylua,
+    formatting.stylua,
   },
 }

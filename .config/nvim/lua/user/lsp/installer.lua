@@ -7,13 +7,13 @@ require("mason").setup()
 
 mason_lspconfig.setup {
   ensure_installed = {
-    "solargraph",
-    "sumneko_lua",
+    -- "solargraph",
+    -- "sumneko_lua",
     "tsserver",
-    "esling",
+    "eslint",
     "jsonls",
     "yamlls",
-    "emmetls"
+    "emmet_ls"
   }
 }
 
@@ -37,12 +37,12 @@ mason_lspconfig.setup_handlers {
     require("lspconfig")["jsonls"].setup(server_opts)
   end,
 
-  ["sumneko_lua"] = function ()
-	 	local sumneko_opts = require("user.lsp.settings.sumneko_lua")
-	 	local server_opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
-
-    require("lspconfig")["sumneko_lua"].setup(server_opts)
-  end,
+  -- ["sumneko_lua"] = function ()
+	 -- 	local sumneko_opts = require("user.lsp.settings.sumneko_lua")
+	 -- 	local server_opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
+  --
+  --   require("lspconfig")["sumneko_lua"].setup(server_opts)
+  -- end,
 
   ["pyright"] = function ()
 	 	local pyright_opts = require("user.lsp.settings.pyright")

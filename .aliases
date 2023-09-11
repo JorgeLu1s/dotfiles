@@ -54,6 +54,8 @@ alias dcg='dcp | grep'
 alias be='bundle exec'
 alias ber='bundle exec rspec'
 alias brc='bundle exec rails console'
+alias bdbm='bundle exec rails db:migrate'
+alias brs='bundle exec rails server'
 
 #ZSH
 alias reload=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
