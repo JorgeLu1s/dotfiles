@@ -73,7 +73,7 @@ keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "<leader>fb", "<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("n", "<leader>fc", "<cmd>Telescope colorscheme<cr>", opts)
 
-keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+keymap("n", "<leader>e", ":Lex 30<cr>", opts)
 keymap("n", "<leader>c", ":bp<BAR>bd#<cr>", opts)
 keymap("n", "<leader>f", ":Format<cr>", opts)
 
