@@ -75,10 +75,14 @@ keymap("n", "<leader>fc", "<cmd>Telescope colorscheme<cr>", opts)
 
 keymap("n", "<leader>e", ":Lex 30<cr>", opts)
 keymap("n", "<leader>c", ":bp<BAR>bd#<cr>", opts)
-keymap("n", "<leader>f", ":Format<cr>", opts)
+keymap("n", "<leader>fm", ":Format<cr>", opts)
+keymap("n", "<leader>fs", ":Telescope current_buffer_fuzzy_find<cr>", opts)
 
 vim.api.nvim_create_user_command('Todo', ':vs ~/Documents/procore/procore.todo.md', {})
 keymap("n", "<leader>t", ":Todo<cr>", opts)
 
 keymap("n", "<leader>bl", ":lua vim.o.background = 'light'<cr>", opts)
 keymap("n", "<leader>bd", ":lua vim.o.background = 'dark'<cr>", opts)
+
+vim.api.nvim_create_user_command('Search', ':Telescope live_grep find_command=rg,--ignore,--hidden,--files,<args> ', { nargs=1 })
+keymap("n", "<leader>fd", ":Search ", opts)
