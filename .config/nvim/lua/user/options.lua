@@ -47,3 +47,8 @@ vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
 
 
 vim.g.copilot_assume_mapped = true
+
+-- netrw settings | aka file explorer
+vim.g.netrw_banner = 0
+vim.g.netrw_keepdir = 0
+vim.g.netrw_winsize = 30
