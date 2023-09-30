@@ -52,12 +52,11 @@ return packer.startup(function(use)
   use "numToStr/Comment.nvim" -- comment code
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "kyazdani42/nvim-web-devicons"
-  -- use "kyazdani42/nvim-tree.lua"
+  use { 'fgheng/winbar.nvim' }
   use "akinsho/bufferline.nvim"
   use "nvim-lualine/lualine.nvim"
   use "lewis6991/impatient.nvim"
   use "goolord/alpha-nvim"
-  use "aserebryakov/vim-todo-lists"
 
   -- Colorschemes
   use "LunarVim/onedarker.nvim"

@@ -249,10 +249,10 @@ _G.packer_plugins = {
     path = "/Users/fullstacklabs/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
     url = "https://github.com/christoomey/vim-tmux-navigator"
   },
-  ["vim-todo-lists"] = {
+  ["winbar.nvim"] = {
     loaded = true,
-    path = "/Users/fullstacklabs/.local/share/nvim/site/pack/packer/start/vim-todo-lists",
-    url = "https://github.com/aserebryakov/vim-todo-lists"
+    path = "/Users/fullstacklabs/.local/share/nvim/site/pack/packer/start/winbar.nvim",
+    url = "https://github.com/fgheng/winbar.nvim"
   }
 }
 

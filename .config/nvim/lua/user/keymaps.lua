@@ -64,28 +64,31 @@ keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
-keymap("n", "<leader>p", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+keymap("n", "<leader>p", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false,layout_config={width=0.6} }))<cr>", opts)
 keymap("n", "<leader>ff", ":Telescope find_files<cr>", opts)
 keymap("n", "<leader>fr", ":Telescope oldfiles<cr>", opts)
 keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>d", "<cmd>Telescope diagnostics<cr>", opts)
 -- keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
-keymap("n", "<leader>fb", "<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+keymap("n", "<leader>fb", "<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_dropdown({ previewer = false,layout_config={width=0.6} }))<cr>", opts)
 keymap("n", "<leader>fc", "<cmd>Telescope colorscheme<cr>", opts)
+keymap("n", "<leader>gs", "<cmd>Telescope git_status<cr>", opts)
 
-keymap("n", "<leader>d", ":Lexplore<cr>", opts)
 keymap("n", "<leader>e", ":Lexplore %:p:h<cr>", opts)
 keymap("n", "<leader>c", ":bp<BAR>bd#<cr>", opts)
 keymap("n", "<leader>fm", ":Format<cr>", opts)
 keymap("n", "<leader>fh", ":Telescope current_buffer_fuzzy_find<cr>", opts)
-
-vim.api.nvim_create_user_command('Todo', ':vs ~/Documents/procore/procore.todo.md', {})
-keymap("n", "<leader>t", ":Todo<cr>", opts)
 
 keymap("n", "<leader>bl", ":lua vim.o.background = 'light'<cr>", opts)
 keymap("n", "<leader>bd", ":lua vim.o.background = 'dark'<cr>", opts)
 
 vim.api.nvim_create_user_command('Search', ':Telescope live_grep search_dirs=<args>', { nargs=1, complete='file' })
 vim.api.nvim_create_user_command('Find', ':Telescope find_files find_command=rg,--ignore,--hidden,--files,<args>', { nargs=1, complete='file' })
+
 keymap("n", "<leader>fs", ":Search ", opts)
 keymap("n", "<leader>fd", ":Find ", opts)
+
+keymap("n", "<leader>r", [[:%s/<C-r><C-w>//g<Left><Left>]], opts)
+
+keymap("n", "<leader>w", ":e %:p:h/", opts)
