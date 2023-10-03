@@ -59,24 +59,34 @@ local function apply_item_completed_highlight()
     end
 end
 
-local function setup()
-    local filename = vim.fn.expand('%t')
-    if string.find(filename, "%.todo%.md$") then
-        print("Todo List")
-        local keymap = vim.api.nvim_set_keymap
+local function setup(data)
+    if string.find(data.filename, "%.todo%.md$") then
+        local keymap = vim.api.nvim_buf_set_keymap
         local opts = { noremap = true, silent = true }
+        local buf = tonumber(data.buf)
 
-        keymap("n", "o", ":lua insert_item_below()<CR>", opts)
-        keymap("n", "O", ":lua insert_item_above()<CR>", opts)
-        keymap("n", "x", ":lua toggle_item()<CR>", opts)
-        keymap("n", "<Tab>", ">>", opts)
-        keymap("n", "<S-Tab>", "<<", opts)
-        keymap("n", "<Tab>", ">>", opts)
-        keymap("n", "<S-Tab>", "<<", opts)
+        keymap(buf, "n", "o", ":lua insert_item_below()<CR>", opts)
+        keymap(buf, "n", "O", ":lua insert_item_above()<CR>", opts)
+        keymap(buf, "n", "x", ":lua toggle_item()<CR>", opts)
+        keymap(buf, "n", "<Tab>", ">>", opts)
+        keymap(buf, "n", "<S-Tab>", "<<", opts)
+        keymap(buf, "i", "<Tab>", "<C-t>", opts)
+        keymap(buf, "i", "<S-Tab>", "<C-d>", opts)
 
         apply_item_completed_highlight()
     end
 end
 
 vim.cmd("hi " .. "ItemCompleted" .. " guifg='Gray'")
-vim.api.nvim_create_autocmd("BufRead", { callback = setup })
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "markdown",
+    callback = function()
+        local data = {
+            buf = vim.fn.expand("<abuf>"),
+            filename = vim.fn.expand("<afile>"),
+        }
+        vim.schedule(function()
+            setup(data)
+        end)
+    end
+})
