@@ -43,6 +43,7 @@ alias gri='git rebase --interactive'
 alias gra='git rebase --abort'
 alias gcp='git cherry-pick'
 alias reset-authors='git commit --amend --reset-author -C HEAD'
+alias lg="lazygit"
 
 # Docker
 alias dc='docker-compose'
@@ -69,3 +70,5 @@ alias aliases="cat $HOME/.aliases"
 
 alias disable-vpn="launchctl unload /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*"
 alias enable-vpn="launchctl load /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*"
+
+alias notes="glow ~/Documents/glow"

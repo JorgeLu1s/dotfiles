@@ -68,7 +68,7 @@ keymap("n", "<leader>p", "<cmd>lua require'telescope.builtin'.find_files(require
 keymap("n", "<leader>ff", ":Telescope find_files<cr>", opts)
 keymap("n", "<leader>fr", ":Telescope oldfiles<cr>", opts)
 keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
-keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>ft", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "<leader>d", "<cmd>Telescope diagnostics<cr>", opts)
 -- keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
 keymap("n", "<leader>fb", "<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_dropdown({ previewer = false,layout_config={width=0.6} }))<cr>", opts)
