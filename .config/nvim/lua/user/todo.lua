@@ -67,11 +67,11 @@ local function setup(data)
 
         keymap(buf, "n", "o", ":lua insert_item_below()<CR>", opts)
         keymap(buf, "n", "O", ":lua insert_item_above()<CR>", opts)
-        keymap(buf, "n", "x", ":lua toggle_item()<CR>", opts)
+        keymap(buf, "n", ",", ":lua toggle_item()<CR>", opts)
         keymap(buf, "n", "<Tab>", ">>", opts)
         keymap(buf, "n", "<S-Tab>", "<<", opts)
-        keymap(buf, "i", "<Tab>", "<C-t>", opts)
-        keymap(buf, "i", "<S-Tab>", "<C-d>", opts)
+        -- keymap(buf, "i", "<Tab>", "<C-t>", opts)
+        -- keymap(buf, "i", "<S-Tab>", "<C-d>", opts)
 
         apply_item_completed_highlight()
     end

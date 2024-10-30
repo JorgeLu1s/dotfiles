@@ -1,10 +1,13 @@
 import:
-  - ~/.config/alacritty/onedark_alacritty.yml
+  - ~/.config/alacritty/tokyonight_moon.yml
+
+hide_cursor_when_typing: true
 
 window:
   padding:
     x: 2
     y: 2
+  # decorations: none
 
 font:
   normal:
@@ -17,7 +20,7 @@ font:
     family: 'JetBrainsMono Nerd Font'
     style: Bold
 
-  size: 14
+  size: 15
   draw_bold_text_with_bright_colors: true
 
 env:

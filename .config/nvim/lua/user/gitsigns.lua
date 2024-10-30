@@ -13,6 +13,7 @@ local function gitsigns_remaps(bufnr)
   vim.keymap.set("n", "<leader>gb", gitsigns.blame_line, opts)
   vim.keymap.set("n", "gb", gitsigns.blame_line, opts)
   vim.keymap.set("n", "<leader>gd", gitsigns.diffthis, opts)
+  vim.keymap.set("n", "<leader>br", gitsigns.reset_buffer, opts)
 end
 
 gitsigns.setup {

@@ -72,3 +72,5 @@ alias disable-vpn="launchctl unload /Library/LaunchAgents/com.paloaltonetworks.g
 alias enable-vpn="launchctl load /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*"
 
 alias notes="glow ~/Documents/glow"
+
+alias checktemp="sudo powermetrics --samplers smc | grep -i 'CPU die temperature'"

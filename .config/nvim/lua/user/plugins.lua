@@ -57,6 +57,7 @@ return packer.startup(function(use)
   use "nvim-lualine/lualine.nvim"
   use "lewis6991/impatient.nvim"
   use "goolord/alpha-nvim"
+  use "nvim-treesitter/nvim-treesitter-context"
 
   -- Colorschemes
   use "LunarVim/onedarker.nvim"
