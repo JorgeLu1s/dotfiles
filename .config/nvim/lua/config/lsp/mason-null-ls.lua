@@ -19,3 +19,13 @@ null_ls.setup {
     formatting.stylua,
   },
 }
+
+local mason_null_ok, mason_null_ls = pcall(require, "mason-null-ls")
+if not mason_null_ok then
+  return
+end
+
+mason_null_ls.setup({
+    automatic_installation = false,
+    automatic_setup = true,
+})
