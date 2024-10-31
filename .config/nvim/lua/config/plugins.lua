@@ -33,14 +33,8 @@ require("lazy").setup({
       event = { "BufReadPre", "BufNewFile" },
       dependencies = {
           "williamboman/mason.nvim",
-          "nvimtools/none-ln.nvim",
+          "nvimtools/none-ls.nvim",
       },
-      config = function()
-          -- Note: the default search path for `require` is ~/.config/nvim/lua
-          -- use a `.` as a path separator
-          -- the suffix `.lua` is not needed
-          require("config.lsp.mason-null-ls")
-      end,
   },
   {
       "onsails/lspkind.nvim",
