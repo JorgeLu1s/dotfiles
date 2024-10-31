@@ -87,6 +87,9 @@ telescope.setup {
     -- }
     -- Now the picker_config_key will be applied every time you call this
     -- builtin picker
+    colorscheme = {
+            enable_preview = true
+    },
   },
   extensions = {
     media_files = {

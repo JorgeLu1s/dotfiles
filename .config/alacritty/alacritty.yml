@@ -1,5 +1,5 @@
 import:
-  - ~/.config/alacritty/tokyonight_moon.yml
+  - ~/.config/alacritty/tokyonight_night.yml
 
 hide_cursor_when_typing: true
 
@@ -9,19 +9,19 @@ window:
     y: 2
   # decorations: none
 
-font:
-  normal:
-    family: 'JetBrainsMono Nerd Font'
-    style: Regular
-  italic:
-    family: 'JetBrainsMono Nerd Font'
-    style: Italic
-  bold:
-    family: 'JetBrainsMono Nerd Font'
-    style: Bold
-
-  size: 15
-  draw_bold_text_with_bright_colors: true
+      #font:
+      #  normal:
+      #    family: 'JetBrainsMono Nerd Font'
+      #    style: Regular
+      #  italic:
+      #    family: 'JetBrainsMono Nerd Font'
+      #    style: Italic
+      #  bold:
+      #    family: 'JetBrainsMono Nerd Font'
+      #    style: Bold
+      #
+      #  size: 15
+      #  draw_bold_text_with_bright_colors: true
 
 env:
   TERM: xterm-256color

@@ -13,13 +13,13 @@ unsetopt nomatch
 source $HOME/.aliases
 source $ZSH/oh-my-zsh.sh
 
-export PATH="$HOME/bin:/usr/local/bin:$PATH"
+export PATH="$HOME/bin:/usr/local/bin:$PATH:/opt/nvim/"
 export EDITOR='nvim'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # export VOLTA_HOME=$HOME/.volta
-export PATH="/usr/local/opt/libpq/bin:/Users/fullstacklabs/go/bin:$PATH"
+# export PATH="/usr/local/opt/libpq/bin:/Users/fullstacklabs/go/bin:$PATH"
 
 export PGSERVICE=dockerservice
 
