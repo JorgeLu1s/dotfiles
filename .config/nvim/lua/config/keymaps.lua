@@ -84,12 +84,13 @@ keymap("n", "<leader>bl", ":lua vim.o.background = 'light'<cr>", opts)
 keymap("n", "<leader>bd", ":lua vim.o.background = 'dark'<cr>", opts)
 keymap("n", "<leader>bc", ":BufferLineCloseOthers<cr>", opts)
 
--- vim.api.nvim_create_user_command('Search', ':Telescope live_grep search_dirs=<args>', { nargs=1, complete='file' })
--- vim.api.nvim_create_user_command('Find', ':Telescope find_files find_command=rg,--ignore,--hidden,--files,<args>', { nargs=1, complete='file' })
 
 keymap("n", "<leader>fs", ":Search ", opts)
 keymap("n", "<leader>fd", ":Find ", opts)
 
 keymap("n", "<leader>r", [[:%s/<C-r><C-w>//g<Left><Left>]], opts)
 
-keymap("n", "<leader>w", ":e %:p:h/", opts)
+vim.api.nvim_create_user_command('Search', ':Telescope live_grep search_dirs=<args>', { nargs=1, complete='file' })
+vim.api.nvim_create_user_command('Find', ':Telescope find_files find_command=rg,--ignore,--hidden,--files,<args>', { nargs=1, complete='file' })
+
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" }) -- open oil with dash (-)

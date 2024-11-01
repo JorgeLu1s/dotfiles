@@ -91,16 +91,24 @@ require("lazy").setup({
     run = ":TSUpdate",
   },
   "goolord/alpha-nvim",
+  "fgheng/winbar.nvim",
+
+    {
+      'stevearc/oil.nvim',
+      ---@module 'oil'
+      ---@type oil.SetupOpts
+      opts = {},
+      -- Optional dependencies
+      dependencies = { { "echasnovski/mini.icons", opts = {} } },
+      -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
+    },
 })
 
-
--- use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
 
 -- Install your plugins here
 -- return packer.startup(function(use)
   -- My plugins here
   -- use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
-  -- use { 'fgheng/winbar.nvim' }
   -- use "lewis6991/impatient.nvim"
 
 

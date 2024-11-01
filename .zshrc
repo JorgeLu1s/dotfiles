@@ -13,7 +13,7 @@ unsetopt nomatch
 source $HOME/.aliases
 source $ZSH/oh-my-zsh.sh
 
-export PATH="$HOME/bin:/usr/local/bin:$PATH:/opt/nvim/"
+export PATH="$HOME/bin:/usr/local/bin:$PATH:/opt/nvim/:$PATH:/usr/local/go/bin"
 export EDITOR='nvim'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
