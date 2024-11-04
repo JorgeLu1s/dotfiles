@@ -59,6 +59,39 @@ local function apply_item_completed_highlight()
     end
 end
 
+function insert_title_below()
+    local current_line = vim.fn.line(".")
+    local current_indent = vim.fn.indent(current_line)
+    local new_line = "## "
+
+    for _ = 1, current_indent do
+        new_line = " " .. new_line
+    end
+
+    vim.api.nvim_buf_set_lines(0, vim.fn.line("."), vim.fn.line("."), false, {new_line})
+    vim.cmd "normal! j"
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("A", true, false, true), "n", true)
+end
+
+function insert_title_above()
+    local current_line = vim.fn.line(".")
+    local current_indent = vim.fn.indent(current_line)
+    local new_line = "## "
+
+    for _ = 1, current_indent do
+        new_line = " " .. new_line
+    end
+
+    if current_line > 1 then
+        vim.api.nvim_buf_set_lines(0, current_line - 1, current_line - 1, false, {new_line})
+        vim.cmd("normal! k")
+        vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("A", true, false, true), "n", true)
+    else
+        vim.api.nvim_buf_set_lines(0, 0, 0, false, {new_line})
+        vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("A", true, false, true), "n", true)
+    end
+end
+
 local function setup(data)
     if string.find(data.filename, "%.todo%.md$") then
         local keymap = vim.api.nvim_buf_set_keymap
@@ -70,6 +103,8 @@ local function setup(data)
         keymap(buf, "n", ",", ":lua toggle_item()<CR>", opts)
         keymap(buf, "n", "<Tab>", ">>", opts)
         keymap(buf, "n", "<S-Tab>", "<<", opts)
+        keymap(buf, "n", "t", ":lua insert_title_below()<CR>", opts)
+        keymap(buf, "n", "T", ":lua insert_title_above()<CR>", opts)
         -- keymap(buf, "i", "<Tab>", "<C-t>", opts)
         -- keymap(buf, "i", "<S-Tab>", "<C-d>", opts)
 
