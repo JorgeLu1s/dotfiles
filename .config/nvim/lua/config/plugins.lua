@@ -68,6 +68,8 @@ require("lazy").setup({
       event = "InsertEnter",
   },
 
+  "github/copilot.vim",
+
   "numToStr/Comment.nvim", -- comment code
   "nvim-lualine/lualine.nvim",
 

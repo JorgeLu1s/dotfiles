@@ -24,7 +24,7 @@ keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
-keymap("n", "Y", '"*y', opts)
+keymap("n", "Y", '"+y', opts)
 
 keymap("n", "<leader>h", ":nohl<cr>", opts)
 -- keymap("n", "<leader>e", ":Lex 30<cr>", opts)
@@ -43,7 +43,7 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
-keymap("v", "Y", '"*y', opts)
+keymap("v", "Y", '"+y', opts)
 
 -- Move text up and down
 keymap("v", "<A-j>", ":m .+1<CR>==", opts)
@@ -68,7 +68,7 @@ keymap("n", "<leader>p", "<cmd>lua require'telescope.builtin'.find_files(require
 keymap("n", "<leader>ff", ":Telescope find_files<cr>", opts)
 keymap("n", "<leader>fr", ":Telescope oldfiles<cr>", opts)
 keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
-keymap("n", "<leader>ft", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "<leader>d", "<cmd>Telescope diagnostics<cr>", opts)
 -- keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
 keymap("n", "<leader>fb", "<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_dropdown({ previewer = false,layout_config={width=0.6} }))<cr>", opts)
@@ -87,8 +87,6 @@ keymap("n", "<leader>bc", ":BufferLineCloseOthers<cr>", opts)
 
 keymap("n", "<leader>fs", ":Search ", opts)
 keymap("n", "<leader>fd", ":Find ", opts)
-
-keymap("n", "<leader>r", [[:%s/<C-r><C-w>//g<Left><Left>]], opts)
 
 vim.api.nvim_create_user_command('Search', ':Telescope live_grep search_dirs=<args>', { nargs=1, complete='file' })
 vim.api.nvim_create_user_command('Find', ':Telescope find_files find_command=rg,--ignore,--hidden,--files,<args>', { nargs=1, complete='file' })
