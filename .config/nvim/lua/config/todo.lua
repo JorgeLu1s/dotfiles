@@ -1,9 +1,8 @@
 local vim = vim
 
-function insert_item_below()
+local function insert_below(new_line)
     local current_line = vim.fn.line(".")
     local current_indent = vim.fn.indent(current_line)
-    local new_line = "- [] "
 
     for _ = 1, current_indent do
         new_line = " " .. new_line
@@ -14,10 +13,9 @@ function insert_item_below()
     vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("A", true, false, true), "n", true)
 end
 
-function insert_item_above()
+local function insert_above(new_line)
     local current_line = vim.fn.line(".")
     local current_indent = vim.fn.indent(current_line)
-    local new_line = "- [] "
 
     for _ = 1, current_indent do
         new_line = " " .. new_line
@@ -33,7 +31,7 @@ function insert_item_above()
     end
 end
 
-function toggle_item()
+function Toggle_item()
     local current_line = vim.fn.line(".")
     local line = vim.api.nvim_buf_get_lines(0, current_line - 1, current_line, false)[1]
 
@@ -59,37 +57,20 @@ local function apply_item_completed_highlight()
     end
 end
 
-function insert_title_below()
-    local current_line = vim.fn.line(".")
-    local current_indent = vim.fn.indent(current_line)
-    local new_line = "## "
-
-    for _ = 1, current_indent do
-        new_line = " " .. new_line
-    end
-
-    vim.api.nvim_buf_set_lines(0, vim.fn.line("."), vim.fn.line("."), false, {new_line})
-    vim.cmd "normal! j"
-    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("A", true, false, true), "n", true)
+function Insert_item_below()
+    insert_below("- [] ")
 end
 
-function insert_title_above()
-    local current_line = vim.fn.line(".")
-    local current_indent = vim.fn.indent(current_line)
-    local new_line = "## "
+function Insert_title_below()
+    insert_below("## ")
+end
 
-    for _ = 1, current_indent do
-        new_line = " " .. new_line
-    end
+function Insert_item_above()
+    insert_above("- [] ")
+end
 
-    if current_line > 1 then
-        vim.api.nvim_buf_set_lines(0, current_line - 1, current_line - 1, false, {new_line})
-        vim.cmd("normal! k")
-        vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("A", true, false, true), "n", true)
-    else
-        vim.api.nvim_buf_set_lines(0, 0, 0, false, {new_line})
-        vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("A", true, false, true), "n", true)
-    end
+function Insert_title_above()
+    insert_above("## ")
 end
 
 local function setup(data)
@@ -98,13 +79,13 @@ local function setup(data)
         local opts = { noremap = true, silent = true }
         local buf = tonumber(data.buf)
 
-        keymap(buf, "n", "o", ":lua insert_item_below()<CR>", opts)
-        keymap(buf, "n", "O", ":lua insert_item_above()<CR>", opts)
-        keymap(buf, "n", ",", ":lua toggle_item()<CR>", opts)
+        keymap(buf, "n", "o", ":lua Insert_item_below()<CR>", opts)
+        keymap(buf, "n", "O", ":lua Insert_item_above()<CR>", opts)
+        keymap(buf, "n", ",", ":lua Toggle_item()<CR>", opts)
         keymap(buf, "n", "<Tab>", ">>", opts)
         keymap(buf, "n", "<S-Tab>", "<<", opts)
-        keymap(buf, "n", "t", ":lua insert_title_below()<CR>", opts)
-        keymap(buf, "n", "T", ":lua insert_title_above()<CR>", opts)
+        keymap(buf, "n", "t", ":lua Insert_title_below()<CR>", opts)
+        keymap(buf, "n", "T", ":lua Insert_title_above()<CR>", opts)
         -- keymap(buf, "i", "<Tab>", "<C-t>", opts)
         -- keymap(buf, "i", "<S-Tab>", "<C-d>", opts)
 
