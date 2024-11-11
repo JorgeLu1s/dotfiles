@@ -27,7 +27,6 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "Y", '"+y', opts)
 
 keymap("n", "<leader>h", ":nohl<cr>", opts)
--- keymap("n", "<leader>e", ":Lex 30<cr>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
@@ -64,6 +63,7 @@ keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
+-- Telescope
 keymap("n", "<leader>p", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false,layout_config={width=0.6} }))<cr>", opts)
 keymap("n", "<leader>ff", ":Telescope find_files<cr>", opts)
 keymap("n", "<leader>fr", ":Telescope oldfiles<cr>", opts)
@@ -74,21 +74,20 @@ keymap("n", "<leader>d", "<cmd>Telescope diagnostics<cr>", opts)
 keymap("n", "<leader>fb", "<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_dropdown({ previewer = false,layout_config={width=0.6} }))<cr>", opts)
 keymap("n", "<leader>fc", "<cmd>Telescope colorscheme<cr>", opts)
 keymap("n", "<leader>gs", "<cmd>Telescope git_status<cr>", opts)
-
-keymap("n", "<leader>e", ":Lexplore %:p:h<cr>", opts)
-keymap("n", "<leader>c", ":bp<BAR>bd#<cr>", opts)
-keymap("n", "<leader>fm", ":Format<cr>", opts)
 keymap("n", "<leader>fh", ":Telescope current_buffer_fuzzy_find<cr>", opts)
 
-keymap("n", "<leader>bl", ":lua vim.o.background = 'light'<cr>", opts)
-keymap("n", "<leader>bd", ":lua vim.o.background = 'dark'<cr>", opts)
+-- Buffers
+keymap("n", "<leader>c", ":bp<BAR>bd#<cr>", opts)
+keymap("n", "<leader>fm", ":Format<cr>", opts)
 keymap("n", "<leader>bc", ":BufferLineCloseOthers<cr>", opts)
-
-
 keymap("n", "<leader>fs", ":Search ", opts)
 keymap("n", "<leader>fd", ":Find ", opts)
 
+keymap("n", "<leader>bl", ":lua vim.o.background = 'light'<cr>", opts)
+keymap("n", "<leader>bd", ":lua vim.o.background = 'dark'<cr>", opts)
+
+-- OIL
+keymap("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" }) -- open oil with dash (-)
+
 vim.api.nvim_create_user_command('Search', ':Telescope live_grep search_dirs=<args>', { nargs=1, complete='file' })
 vim.api.nvim_create_user_command('Find', ':Telescope find_files find_command=rg,--ignore,--hidden,--files,<args>', { nargs=1, complete='file' })
-
-vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" }) -- open oil with dash (-)
