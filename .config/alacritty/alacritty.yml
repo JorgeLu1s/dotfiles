@@ -7,20 +7,21 @@ window:
   padding:
     x: 2
     y: 2
+  decorations: none
 
 font:
  normal:
-   family: 'FiraCode Nerd Font'
+   family: 'FiraCode Nerd Font Mono'
    style: Regular
  italic:
-   family: 'FiraCode Nerd Font'
+   family: 'FiraCode Nerd Font Mono'
    style: Italic
  bold:
-   family: 'FiraCode Nerd Font'
+   family: 'FiraCode Nerd Font Mono'
    style: Bold
 
  size: 12
  # draw_bold_text_with_bright_colors: true
 
-env:
-  TERM: xterm-256color
+# env:
+#   TERM: xterm-256color
