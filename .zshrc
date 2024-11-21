@@ -19,4 +19,5 @@ export EDITOR='nvim'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export PGSERVICE=dockerservice
-DISABLE_SPRING=true
+
+export DISABLE_SPRING=true

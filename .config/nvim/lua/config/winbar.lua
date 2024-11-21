@@ -1,40 +1,24 @@
-local status_ok, winbar = pcall(require, "winbar")
-if not status_ok then
-  return
+vim.api.nvim_set_hl(0, "WinBarModified", { fg = "#ff4d4d", bold = true })  -- Red bold text for modified files
+vim.api.nvim_set_hl(0, "WinBarDefault", { fg = "#ffffff" })               -- Default white text
+
+function Custom_winbar()
+    local exclude_filetypes = { "dashboard", "alpha", "NvimTree", "help" }
+
+    -- Exclude certain filetypes
+    if vim.tbl_contains(exclude_filetypes, vim.bo.filetype) then
+        return ""
+    end
+
+    -- Check if the buffer is modified
+    local is_modified = vim.bo.modified
+    local filename = vim.fn.expand("%:t") -- Get the filename
+
+    if is_modified then
+        return string.format(" %%#WinBarModified#%s %%m", filename)  -- Apply 'WinBarModified' highlight
+    else
+        return string.format(" %%#WinBarDefault#%s", filename)  -- Apply 'WinBarDefault' highlight
+    end
 end
 
-winbar.setup({
-    enabled = true,
-
-    show_file_path = true,
-    show_symbols = true,
-
-    colors = {
-        path = '', -- You can customize colors like #c946fd
-        file_name = '',
-        symbols = '',
-    },
-
-    icons = {
-        file_icon_default = '',
-        seperator = '>',
-        editor_state = '●',
-        lock_icon = '',
-    },
-
-    exclude_filetype = {
-        'help',
-        'startify',
-        'dashboard',
-        'packer',
-        'neogitstatus',
-        'NvimTree',
-        'Trouble',
-        'alpha',
-        'lir',
-        'Outline',
-        'spectre_panel',
-        'toggleterm',
-        'qf',
-    }
-})
+-- Apply the custom winbar globally
+vim.o.winbar = "%{%v:lua.Custom_winbar()%}"

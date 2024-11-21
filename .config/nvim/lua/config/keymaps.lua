@@ -34,10 +34,6 @@ keymap("n", "<C-Down>", ":resize -2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
--- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
-
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
@@ -77,9 +73,10 @@ keymap("n", "<leader>gs", "<cmd>Telescope git_status<cr>", opts)
 keymap("n", "<leader>fh", ":Telescope current_buffer_fuzzy_find<cr>", opts)
 
 -- Buffers
+keymap("n", "<S-l>", ":bnext<CR>", opts)
+keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<leader>c", ":bp<BAR>bd#<cr>", opts)
 keymap("n", "<leader>fm", ":Format<cr>", opts)
-keymap("n", "<leader>bc", ":BufferLineCloseOthers<cr>", opts)
 keymap("n", "<leader>fs", ":Search ", opts)
 keymap("n", "<leader>fd", ":Find ", opts)
 

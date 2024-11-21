@@ -8,7 +8,7 @@ local function insert_below(new_line)
         new_line = " " .. new_line
     end
 
-    vim.api.nvim_buf_set_lines(0, vim.fn.line("."), vim.fn.line("."), false, {new_line})
+    vim.api.nvim_buf_set_lines(0, vim.fn.line("."), vim.fn.line("."), false, { new_line })
     vim.cmd "normal! j"
     vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("A", true, false, true), "n", true)
 end
@@ -22,11 +22,11 @@ local function insert_above(new_line)
     end
 
     if current_line > 1 then
-        vim.api.nvim_buf_set_lines(0, current_line - 1, current_line - 1, false, {new_line})
+        vim.api.nvim_buf_set_lines(0, current_line - 1, current_line - 1, false, { new_line })
         vim.cmd("normal! k")
         vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("A", true, false, true), "n", true)
     else
-        vim.api.nvim_buf_set_lines(0, 0, 0, false, {new_line})
+        vim.api.nvim_buf_set_lines(0, 0, 0, false, { new_line })
         vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("A", true, false, true), "n", true)
     end
 end
@@ -37,11 +37,11 @@ function Toggle_item()
 
     if string.find(line, "%[%]") then
         local new_line = line:gsub("%[%]", "[x]")
-        vim.api.nvim_buf_set_lines(0, current_line - 1, current_line, false, {new_line})
+        vim.api.nvim_buf_set_lines(0, current_line - 1, current_line, false, { new_line })
         vim.api.nvim_buf_add_highlight(0, -1, "ItemCompleted", current_line - 1, 0, -1)
     elseif string.find(line, "%[x%]") then
         local new_line = line:gsub("%[x%]", "[]")
-        vim.api.nvim_buf_set_lines(0, current_line - 1, current_line, false, {new_line})
+        vim.api.nvim_buf_set_lines(0, current_line - 1, current_line, false, { new_line })
     end
 end
 

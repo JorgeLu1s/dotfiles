@@ -10,7 +10,7 @@ local options = {
   mouse = "", -- a                         -- allow the mouse to be used in neovim
   pumheight = 10,                          -- pop up menu height
   showmode = false,                        -- we don't need to see things like -- INSERT -- anymore
-  showtabline = 2,                         -- always show tabs
+  showtabline = 0,                         -- always show tabs {0, 2}
   smartcase = true,                        -- smart case
   smartindent = true,                      -- make indenting smarter again
   splitbelow = true,                       -- force all horizontal splits to go below current window
@@ -33,10 +33,12 @@ local options = {
   scrolloff = 8,                           -- is one of my fav
   sidescrolloff = 8,
   guifont = "monospace:h17",               -- the font used in graphical neovim applications
+  -- winbar="%t %m"                           -- show the current file and mode in the status bar
 }
 
 vim.opt.shortmess:append "c"
-vim.opt.clipboard:append('unnamedplus')
+vim.opt.clipboard:append('unnamed')
+
 
 for k, v in pairs(options) do
   vim.opt[k] = v
@@ -55,4 +57,4 @@ vim.g.netrw_keepdir = 0
 vim.g.netrw_winsize = 30
 
 
--- vim.api.nvim_set_hl(0, 'Comment', { italic=true })
+vim.api.nvim_set_hl(0, 'Comment', { italic=true })
