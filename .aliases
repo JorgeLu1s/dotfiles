@@ -74,3 +74,4 @@ alias enable-vpn="launchctl load /Library/LaunchAgents/com.paloaltonetworks.gp.p
 alias notes="glow ~/Documents/glow"
 
 alias checktemp="sudo powermetrics --samplers smc | grep -i 'CPU die temperature'"
+alias pserver="python3 -m http.server 6969 -d ~/Documents/sharing"
