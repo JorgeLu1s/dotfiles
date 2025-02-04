@@ -1,5 +1,5 @@
 import:
-  - ~/.config/alacritty/tokyonight_night.yml
+  - ~/.config/alacritty/nordfox_alacritty.yml
 
 hide_cursor_when_typing: true
 
