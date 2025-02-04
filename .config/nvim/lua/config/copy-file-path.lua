@@ -1,0 +1,5 @@
+vim.api.nvim_create_user_command('CopyFilePath', function()
+  local file_path = vim.fn.expand('%')
+  vim.fn.setreg('+', file_path)
+  print("File path copied to clipboard: " .. file_path)
+end, {})

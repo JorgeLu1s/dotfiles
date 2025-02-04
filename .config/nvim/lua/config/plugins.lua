@@ -82,6 +82,11 @@ require("lazy").setup({
         end,
     },
 
+    {
+        "ThePrimeagen/harpoon",
+        branch = "harpoon2",
+        dependencies = { "nvim-lua/plenary.nvim" }
+    },
     "christoomey/vim-tmux-navigator", -- Tmux Navigator
     "lewis6991/gitsigns.nvim", -- Git
     --"akinsho/bufferline.nvim",

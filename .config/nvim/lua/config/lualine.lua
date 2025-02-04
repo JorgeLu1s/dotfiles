@@ -71,7 +71,7 @@ lualine.setup({
     sections = {
         lualine_a = { "mode" },
         lualine_b = { branch, "diff", diagnostics },
-        lualine_c = { { custom_fname, path = 1 } },
+        lualine_c = { { custom_fname, path = 4 } },
         lualine_x = { spaces },
         lualine_y = { "filetype" },
         lualine_z = { "location" },

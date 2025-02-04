@@ -6,7 +6,7 @@ end
 configs.setup {
     ensure_installed = "all", -- can be "maintained" or a list of languages
     sync_install = false,
-    ignore_install = { "ruby" }, -- List of parsers to ignore installing
+    ignore_install = {}, -- List of parsers to ignore installing
     autopairs = {
         enable = true,
     },
