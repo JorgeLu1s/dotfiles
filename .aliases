@@ -50,6 +50,7 @@ alias dc='docker-compose'
 alias dcu='dc up'
 alias dcp='dc ps'
 alias dcg='dcp | grep'
+alias dpsql='docker exec -it myPostgres psql -h localhost -U postgres'
 
 # Ruby/Rails
 alias be='bundle exec'
@@ -75,3 +76,5 @@ alias notes="glow ~/Documents/glow"
 
 alias checktemp="sudo powermetrics --samplers smc | grep -i 'CPU die temperature'"
 alias pserver="python3 -m http.server 6969 -d ~/Documents/sharing"
+
+alias air="$HOME/go/bin/air"

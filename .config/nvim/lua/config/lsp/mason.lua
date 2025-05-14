@@ -15,7 +15,7 @@ require("mason").setup({
 
 mason_lspconfig.setup {
     ensure_installed = {
-        -- "sumneko_lua",
+        -- "lua_ls",
         -- "tsserver",
         "eslint",
         "jsonls",
@@ -44,17 +44,23 @@ mason_lspconfig.setup_handlers {
         require("lspconfig")["jsonls"].setup(server_opts)
     end,
 
-    ["sumneko_lua"] = function ()
-        local sumneko_opts = require("config.lsp.settings.sumneko_lua")
-        local server_opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
-
-        require("lspconfig")["sumneko_lua"].setup(server_opts)
-    end,
+    -- ["lua_ls"] = function ()
+    --     local sumneko_opts = require("config.lsp.settings.lua_ls")
+    --     local server_opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
+    --
+    --     require("lspconfig")["lua_ls"].setup(server_opts)
+    -- end,
 
     ["pyright"] = function ()
         local pyright_opts = require("config.lsp.settings.pyright")
         local server_opts = vim.tbl_deep_extend("force", pyright_opts, opts)
 
         require("lspconfig")["pyright"].setup(server_opts)
-    end
+    end,
+
+    ["tailwindcss"] = function ()
+        require("lspconfig")["tailwindcss"].setup({
+          filetypes = { "html", "css", "javascript", "typescript", "vue", "svelte", "php", "eruby" },
+        })
+    end,
 }

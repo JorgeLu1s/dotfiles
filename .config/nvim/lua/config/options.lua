@@ -48,7 +48,8 @@ vim.opt.clipboard:append('unnamed')
 -- vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
 
 
-vim.g.copilot_assume_mapped = true
+-- uncommen this for copilot autocomplete #copilot
+-- vim.g.copilot_assume_mapped = true
 
 -- netrw settings | aka file explorer
 vim.g.netrw_banner = 0
