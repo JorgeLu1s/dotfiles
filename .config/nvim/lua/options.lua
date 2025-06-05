@@ -58,3 +58,6 @@ vim.g.netrw_winsize = 30
 
 
 vim.api.nvim_set_hl(0, 'Comment', { italic=true })
+
+-- vim.lsp.enable()
+vim.lsp.completion.enable()
