@@ -1,12 +1,5 @@
--- require "alpha"
--- require "harpoon"
-require "colorscheme"
-require "contextzip"
-require "copy-file-path"
-require "diagnostics"
 require "keymaps"
 require "options"
-require "todo"
 
 local fn = vim.fn
 
@@ -30,3 +23,11 @@ require("lazy").setup({
 })
 
 require("autocommands")
+require "diagnostics"
+
+-- CUSTOM
+
+require "colorscheme"
+require "contextzip"
+require "copy-file-path"
+require "todo"
