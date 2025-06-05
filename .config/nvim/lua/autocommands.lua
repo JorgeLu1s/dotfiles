@@ -13,10 +13,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
         -- Diagnostic keymaps
         map('<leader>cd', vim.diagnostic.open_float, 'Line Diagnostics')
         map('[d', function()
-            vim.diagnostic.jump { count = -1, float = true }
+            vim.diagnostic.jump({ count = -1, float = true })
         end, 'Go to previous [D]iagnostic message')
         map(']d', function()
-            vim.diagnostic.jump { count = 1, float = true }
+            vim.diagnostic.jump({ count = 1, float = true })
         end, 'Go to next [D]iagnostic message')
         -- map('<leader>e', vim.diagnostic.open_float, 'Show diagnostic [E]rror messages')
         -- map('<leader>q', vim.diagnostic.setloclist, 'Open diagnostic [Q]uickfix list')

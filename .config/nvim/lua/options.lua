@@ -43,21 +43,7 @@ end
 vim.opt.shortmess:append "c"
 vim.opt.clipboard:append('unnamed')
 
--- vim.cmd "set whichwrap+=<,>,[,],h,l"
--- vim.cmd [[set iskeyword+=-]]
--- vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
-
-
--- uncommen this for copilot autocomplete #copilot
--- vim.g.copilot_assume_mapped = true
-
--- netrw settings | aka file explorer
-vim.g.netrw_banner = 0
-vim.g.netrw_keepdir = 0
-vim.g.netrw_winsize = 30
-
-
 vim.api.nvim_set_hl(0, 'Comment', { italic=true })
 
 -- vim.lsp.enable()
-vim.lsp.completion.enable()
+-- vim.lsp.completion.enable()

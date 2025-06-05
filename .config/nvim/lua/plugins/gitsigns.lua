@@ -22,7 +22,10 @@ return {
         opts = {
             on_attach = function(buffer)
                 gitsigns_remaps(buffer)
-            end
+            end,
+            preview_config = {
+                border = 'rounded',
+            }
         }
     }
 }
