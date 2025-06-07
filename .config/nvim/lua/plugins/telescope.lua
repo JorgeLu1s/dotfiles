@@ -1,6 +1,19 @@
 return {
     "nvim-telescope/telescope.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
+    cmd = "Telescope",
+    keys = {
+        { "<leader>p", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false,layout_config={width=0.6} }))<cr>", desc = "find files" },
+        { "<leader>ff", ":Telescope find_files<cr>" },
+        { "<leader>fr", ":Telescope oldfiles<cr>" },
+        { "<c-t>", "<cmd>Telescope live_grep<cr>" },
+        { "<leader>fg", "<cmd>Telescope live_grep<cr>" },
+        { "<leader>fd", "<cmd>Telescope diagnostics<cr>" },
+        { "<leader>fb", "<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_dropdown({ previewer = false,layout_config={width=0.6} }))<cr>" },
+        { "<leader>fc", "<cmd>Telescope colorscheme<cr>" },
+        { "<leader>gs", "<cmd>Telescope git_status<cr>" },
+        { "<leader>fh", ":Telescope current_buffer_fuzzy_find<cr>" },
+    },
     opts = function()
         local actions = require "telescope.actions"
         return {
