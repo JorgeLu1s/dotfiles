@@ -33,6 +33,7 @@ local options = {
   scrolloff = 8,                           -- is one of my fav
   sidescrolloff = 8,
   guifont = "monospace:h17",               -- the font used in graphical neovim applications
+  winborder = "rounded",
   -- winbar="%t %m"                           -- show the current file and mode in the status bar
 }
 

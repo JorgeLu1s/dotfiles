@@ -59,18 +59,6 @@ keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
--- Telescope
-keymap("n", "<leader>p", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false,layout_config={width=0.6} }))<cr>", opts)
-keymap("n", "<leader>ff", ":Telescope find_files<cr>", opts)
-keymap("n", "<leader>fr", ":Telescope oldfiles<cr>", opts)
-keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
-keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
-keymap("n", "<leader>fd", "<cmd>Telescope diagnostics<cr>", opts)
--- keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
-keymap("n", "<leader>fb", "<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_dropdown({ previewer = false,layout_config={width=0.6} }))<cr>", opts)
-keymap("n", "<leader>fc", "<cmd>Telescope colorscheme<cr>", opts)
-keymap("n", "<leader>gs", "<cmd>Telescope git_status<cr>", opts)
-keymap("n", "<leader>fh", ":Telescope current_buffer_fuzzy_find<cr>", opts)
 
 -- Buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
