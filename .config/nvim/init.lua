@@ -20,6 +20,27 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     import = "plugins"
+}, {
+    change_detection = {
+        notify = false
+    },
+    rocks = {
+        enabled = false,
+    },
+    performance = {
+        rtp = {
+            -- Stuff I don't use.
+            disabled_plugins = {
+                'gzip',
+                'netrwPlugin',
+                'rplugin',
+                'tarPlugin',
+                'tohtml',
+                'tutor',
+                'zipPlugin',
+            },
+        },
+    },
 })
 
 require("autocommands")

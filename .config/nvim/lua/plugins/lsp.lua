@@ -1,28 +1,18 @@
 return {
+    { "mason-org/mason.nvim",
+        cmd = "Mason",
+        build = ":MasonUpdate",
+        opts = {}
+    },
     {
         "mason-org/mason-lspconfig.nvim",
+        event = { "BufReadPre", "BufNewFile" },
         opts = {},
         dependencies = {
-            { "mason-org/mason.nvim", opts = {} },
-            { 
+            'williamboman/mason.nvim',
+            {
                 "neovim/nvim-lspconfig",
-                config = function()
-                    -- Set float borders BEFORE any LSP servers start
-                    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-                        vim.lsp.handlers.hover,
-                        { border = "rounded" }
-                    )
-
-                    vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
-                        vim.lsp.handlers.signature_help,
-                        { border = "rounded" }
-                    )
-
-                    -- now start servers
-                    -- require("lspconfig").lua_ls.setup({})
-                    -- require("lspconfig").tsserver.setup({})
-                    -- etc.
-                end,
+                event = { "BufReadPre", "BufNewFile" },
             },
         },
     },
