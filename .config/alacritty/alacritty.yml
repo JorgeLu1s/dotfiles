@@ -1,13 +1,16 @@
 import:
-  - ~/.config/alacritty/nordfox_alacritty.yml
+  - ~/.config/alacritty/nordfox.yml
 
 hide_cursor_when_typing: true
 
-window:
-  padding:
-    x: 2
-    y: 2
-  decorations: none
+# window:
+  # padding:
+    # x: 2
+    # y: 8
+  # decorations: none
+
+mouse:
+  hide_when_typing: true
 
 font:
   normal:
@@ -20,7 +23,4 @@ font:
     family: 'FiraCode Nerd Font Mono'
     style: SemiBold
 
-  size: 12
-
-# env:
-#   TERM: xterm-256color
+  size: 13
