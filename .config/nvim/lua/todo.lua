@@ -86,8 +86,8 @@ local function setup(data)
         keymap(buf, "n", "<S-Tab>", "<<", opts)
         keymap(buf, "n", "t", ":lua Insert_title_below()<CR>", opts)
         keymap(buf, "n", "T", ":lua Insert_title_above()<CR>", opts)
-        -- keymap(buf, "i", "<Tab>", "<C-t>", opts)
-        -- keymap(buf, "i", "<S-Tab>", "<C-d>", opts)
+        keymap(buf, "i", "<Tab>", "<C-t>", opts)
+        keymap(buf, "i", "<S-Tab>", "<C-d>", opts)
 
         apply_item_completed_highlight()
     end

@@ -30,6 +30,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
            vim.lsp.buf.hover({
                max_width = math.floor(vim.o.columns * 0.7),
                max_height = math.floor(vim.o.lines * 0.7),
+               border = "rounded"
            })
         end, "")
         map("gD", vim.lsp.buf.declaration, "")

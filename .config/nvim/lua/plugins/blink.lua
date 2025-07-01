@@ -18,18 +18,18 @@ return {
         default = { 'lsp', 'path', 'snippets', 'buffer' },
       },
       completion = {
-        menu = { border = 'single' },
-        documentation = { window = { border = 'single' } },
+        menu = { border = 'rounded' },
+        documentation = { window = { border = 'rounded' } },
       },
       signature = {
         enabled = true,
-        window = { border = 'single' },
+        window = { border = 'rounded' },
       },
       keymap = {
         preset = 'enter',
         ['<C-y>'] = { 'select_and_accept' },
+        ['<C-b>'] = { function(cmp) cmp.show({ providers = { 'snippets' } }) end },
       },
     },
   },
 }
-

@@ -71,8 +71,27 @@ keymap("n", "<leader>fj", ":PickContextFile<cr>", opts)
 keymap("n", "<leader>bl", ":lua vim.o.background = 'light'<cr>", opts)
 keymap("n", "<leader>bd", ":lua vim.o.background = 'dark'<cr>", opts)
 
+keymap("n", "<C-N>", ":cnext<cr>", opts)
+keymap("n", "<C-m>", ":cprev<cr>", opts)
+
 -- OIL
 keymap("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" }) -- open oil with dash (-)
 
 vim.api.nvim_create_user_command('Search', ':Telescope live_grep search_dirs=<args>', { nargs=1, complete='file' })
 vim.api.nvim_create_user_command('Find', ':Telescope find_files find_command=rg,--ignore,--hidden,--files,<args>', { nargs=1, complete='file' })
+
+vim.keymap.set("n", "<S-T>", function()
+  require("todo_float").open_todo()
+end, { desc = "Open TODO float" })
+
+vim.keymap.set("n", "<leader>z", function()
+    require("zen-mode").toggle({
+        window = {
+            backdrop = 1,
+            width = .60
+        },
+        -- plugins = {
+        --     tmux = { enabled = true }
+        -- }
+    })
+end, {})

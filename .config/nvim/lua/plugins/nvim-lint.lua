@@ -15,6 +15,7 @@ return {
             svelte = { "eslint" },
             python = { "pylint" },
             ruby = { "rubocop" },
+            eruby = { "rubocop" },
         }
 
         require("lint").linters.rubocop = {

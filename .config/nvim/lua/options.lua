@@ -33,7 +33,6 @@ local options = {
   scrolloff = 8,                           -- is one of my fav
   sidescrolloff = 8,
   guifont = "monospace:h17",               -- the font used in graphical neovim applications
-  winborder = "rounded",
   -- winbar="%t %m"                           -- show the current file and mode in the status bar
 }
 
@@ -48,3 +47,13 @@ vim.api.nvim_set_hl(0, 'Comment', { italic=true })
 
 -- vim.lsp.enable()
 -- vim.lsp.completion.enable()
+
+vim.api.nvim_create_user_command("HighlightTrailingSpaces", function()
+  vim.api.nvim_set_hl(0, "ExtraWhitespace", { bg = "LightRed" })
+  vim.fn.matchadd("ExtraWhitespace", [[\s\+$]])
+end, {})
+
+vim.api.nvim_create_user_command("ClearTrailingSpacesHighlight", function()
+  vim.fn.clearmatches()
+end, {})
+

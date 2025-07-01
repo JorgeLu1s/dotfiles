@@ -10,7 +10,6 @@ return {
         options = {
             icons_enabled = true,
             theme = "auto",
-            -- theme = "tokyonight",
             component_separators = { left = "", right = "" },
             section_separators = { left = "", right = "" },
             disabled_filetypes = { "dashboard", "NvimTree", "Outline", "alpha" },
@@ -24,7 +23,7 @@ return {
         sections = {
             lualine_a = { "mode" },
             lualine_b = { "branch", "diff", "diagnostics" },
-            lualine_c = { { "filename", path = 4 } },
+            lualine_c = { { "filename", path = 1 } },
             lualine_x = { spaces },
             lualine_y = { "filetype" },
             lualine_z = { "location" },
