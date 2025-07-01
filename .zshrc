@@ -2,7 +2,7 @@
 ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="fwalch" # robbyrussell fwalch
 
 # Note: zsh-syntax-highlighting needs to be the last element of the array
 plugins=(git ruby rails history-substring-search asdf)
