@@ -85,13 +85,5 @@ vim.keymap.set("n", "<S-T>", function()
 end, { desc = "Open TODO float" })
 
 vim.keymap.set("n", "<leader>z", function()
-    require("zen-mode").toggle({
-        window = {
-            backdrop = 1,
-            width = .60
-        },
-        -- plugins = {
-        --     tmux = { enabled = true }
-        -- }
-    })
+    require("zen-mode").toggle()
 end, {})
