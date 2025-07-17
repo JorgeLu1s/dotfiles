@@ -6,7 +6,7 @@
 
 ## Symlink Dotfiles
 
-```ln -s ./dotfiles/ ~/.config/```
+```stow <package> -t ~/```
 
 ## Neovim LSP servers
 
