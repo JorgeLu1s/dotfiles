@@ -19,7 +19,7 @@ return {
                 desc = "Harpoon File",
             },
             {
-                "<leader>l",
+                "<leader>fl",
                 function()
                     local harpoon = require("harpoon")
                     harpoon.ui:toggle_quick_menu(harpoon:list())
@@ -28,8 +28,8 @@ return {
             },
         }
 
-        local menu_keys = {"q", "w", "e", "r", "t"}
-        for i = 1, 5 do
+        local menu_keys = {"s", "d", "w", "e", "k", "l", "i", "o"}
+        for i = 1, 8 do
             table.insert(keys, {
                 "<leader>" .. menu_keys[i],
                 function()

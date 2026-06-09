@@ -1,9 +1,9 @@
 return {
     "folke/zen-mode.nvim",
-    -- opts = {
-    --     window = {
-    --         -- backdrop = 0.95,
-    --         width = .60
-    --     }
-    -- },
+    opts = {
+        plugins = {
+            tmux = { enabled = true }, -- disables the tmux statusline
+        }
+    },
+    lazy = true
 }

@@ -24,7 +24,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
             vim.diagnostic.jump({ count = 1, float = true })
         end, 'Go to next [D]iagnostic message')
         -- map('<leader>e', vim.diagnostic.open_float, 'Show diagnostic [E]rror messages')
-        -- map('<leader>q', vim.diagnostic.setloclist, 'Open diagnostic [Q]uickfix list')
+        map('<leader>q', vim.diagnostic.setloclist, 'Open diagnostic [Q]uickfix list')
 
         map("K", function ()
            vim.lsp.buf.hover({
@@ -38,8 +38,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
         map("gi",  vim.lsp.buf.implementation, "")
         map("gr",  vim.lsp.buf.references, "")
         map("<leader>ca", vim.lsp.buf.code_action, "")
-        map("<leader>df", function() vim.diagnostic.open_float({ border = 'rounded' }) end, "")
-        map("<leader>dl",  vim.diagnostic.setloclist, "")
+        map("df", function() vim.diagnostic.open_float({ border = 'rounded' }) end, "")
+        -- map("<leader>dl",  vim.diagnostic.setloclist, "")
         map("<leader>fm",  vim.lsp.buf.format, "")
     end,
 })

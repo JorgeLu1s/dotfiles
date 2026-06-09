@@ -20,12 +20,12 @@ return {
         -- Define your formatters
         formatters_by_ft = {
             lua = { "stylua" },
-            javascript = { "prettierd", "prettier", stop_after_first = true },
-            javascriptreact = { "prettierd", "prettier", stop_after_first = true },
-            typescript = { "prettierd", "prettier", stop_after_first = true },
-            typescriptreact = { "prettierd", "prettier", stop_after_first = true },
-            json = { "prettierd", "prettier", stop_after_first = true },
-            graphql = { "prettierd", "prettier", stop_after_first = true },
+            javascript = { "prettier" },
+            javascriptreact = { "prettier" },
+            typescript = { "prettier" },
+            typescriptreact = { "prettier" },
+            json = { "prettier" },
+            graphql = { "prettier" },
             ruby = { "rubocop", stop_after_first = true },
             eruby = { "erb_format", stop_after_first = true },
         },
@@ -43,6 +43,11 @@ return {
             rubocop = {
                 command = "bundle",
                 args = { "exec", "rubocop", "--auto-correct", "--stderr", "--stdin", "$FILENAME" },
+                stdin = true,
+            },
+            prettier = {
+                exe = "prettier",
+                args = { "--stdin-filepath", "%<CR>" },
                 stdin = true,
             },
         },

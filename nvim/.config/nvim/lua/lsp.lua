@@ -16,7 +16,7 @@ lspconfig.tailwindcss.setup({
     root_dir = lspconfig.util.root_pattern("tailwind.config.js", "tailwind.config.ts", "postcss.config.js", "package.json", ".git"),
 })
 
-lspconfig.emmet_ls.setup({
+lspconfig.emmet_language_server.setup({
     -- on_attach = on_attach,
     filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug", "typescriptreact", "vue" },
     init_options = {

@@ -1,5 +1,4 @@
 return {
-    "folke/tokyonight.nvim",
     {
         "EdenEast/nightfox.nvim",
         config = function()
@@ -43,5 +42,18 @@ return {
             end
         },
     },
-    { "vague2k/vague.nvim" },
+    {
+        "baliestri/aura-theme",
+        lazy = false,
+        priority = 1000,
+        config = function(plugin)
+            vim.opt.rtp:append(plugin.dir .. "/packages/neovim")
+            -- vim.cmd([[colorscheme aura-dark]])
+        end
+    },
+    {
+        dir = "~/code/personal/nvim/vs-26.nvim", -- local path
+        lazy = false,
+        priority = 1000,
+    }
 }
