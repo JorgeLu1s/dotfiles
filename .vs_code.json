@@ -1,31 +1,162 @@
 {
     "editor.minimap.enabled": false,
     "editor.lineNumbers": "relative",
-    "editor.fontFamily": "'FiraCode Nerd Font Mono', 'Droid Sans Mono', 'monospace', monospace",
-    "editor.fontSize": 16,
+    "editor.fontSize": 17,
     "editor.hideCursorInOverviewRuler": true,
     "editor.overviewRulerBorder": false,
     "editor.scrollbar.horizontal": "hidden",
     "editor.scrollbar.vertical": "hidden",
-    "editor.fontLigatures": true,
+    "editor.fontLigatures": false,
     "editor.guides.indentation": false,
+    "editor.renderControlCharacters": false,
+    "editor.fontFamily": "'FiraCode Nerd Font Mono', 'Droid Sans Mono', 'monospace', monospace",
     "workbench.tree.renderIndentGuides": "none",
     "workbench.activityBar.location": "hidden",
+    "workbench.layoutControl.enabled": false,
     "workbench.sideBar.location": "right",
+	"workbench.panel.defaultLocation": "left",
+    // "workbench.editor.showTabs": "single",
+    "window.commandCenter": false,
+    "window.zoomLevel": 1,
+    "window.menuBarVisibility": "toggle",
+    "chat.commandCenter.enabled": false,
     "vim.handleKeys": {
         "<C-S-F>": false,
+        "<C-S-G>": false,
         "<C-f>": false,
+        "<C-g>": false,
         "<C-w>": false,
         "<C-p>": false,
         "<C-b>": false,
+        // "<C-d>": false,
         "<C-k>": false,
+        "<C-z>": false,
+        // "<C-r>": false,
         "<S-H>": false,
-        "<S-L>": false,
+        "<S-L>": false
     },
-    "window.commandCenter": false,
-    "workbench.layoutControl.enabled": false,
-    "chat.commandCenter.enabled": false,
-    "editor.renderControlCharacters": false,
-    "workbench.editor.showTabs": "single",
-    "window.menuBarVisibility": "compact",
+    // "chat.editor.fontSize": 14,
+    "terminal.integrated.fontSize": 15,
+    // "chat.fontSize": 14,
+    "vim.useSystemClipboard": true,
+    "vim.matchpairs": "(:),{:},[:],<:>",
+    "vim.normalModeKeyBindings": [
+        // {
+        //     "before": ["leader", "e"],
+        //     "commands": ["workbench.view.explorer"]
+        // },
+        {
+            "before": ["leader", "p"],
+            "commands": ["workbench.action.quickOpen"]
+        },
+        {
+            "before": ["leader", "z"],
+            "commands": ["workbench.action.toggleZenMode"]
+        },
+        // {
+        //     "before": ["leader", "f"],
+        //     "commands": ["workbench.action.findInFiles"]
+        // },
+        {
+            "before": ["leader", "g"],
+            "commands": ["git.showChange"]
+        },
+        {
+            "before": ["g", "j"],
+            "commands": ["workbench.action.editor.nextChange"]
+        },
+        {
+            "before": ["g", "k"],
+            "commands": ["workbench.action.editor.previousChange"]
+        },
+        {
+            "before": ["leader", "q"],
+            "commands": ["editor.action.quickFix"]
+        },
+        {
+            "before": ["shift+l"],
+            "commands": ["workbench.action.nextEditor"]
+        },
+        {
+            "before": ["shift+h"],
+            "commands": ["workbench.action.previousEditor"]
+        },
+        {
+            "before": ["shift+k"],
+            "commands": ["editor.action.showHover"]
+        },
+        {
+            "before": ["leader", "c"],
+            "commands": ["workbench.action.closeActiveEditor"]
+        },
+        {
+            "before": ["[", "d"],
+            "commands": ["editor.action.marker.prev"]
+        },
+        {
+            "before": ["]", "d"],
+            "commands": ["editor.action.marker.next"]
+        },
+        {
+            "before": ["<leader>", "m"],
+            "commands": ["vscode-harpoon.addEditor"]
+        },
+        {
+            "before": ["<leader>", "l"],
+            "commands": ["vscode-harpoon.editEditors"]
+        },
+        {
+            "before": ["<leader>", "f", "l"],
+            "commands": ["vscode-harpoon.editorQuickPick"]
+        },
+        {
+            "before": ["<leader>", "s"],
+            "commands": ["vscode-harpoon.gotoEditor1"]
+        },
+        {
+            "before": ["<leader>", "d"],
+            "commands": ["vscode-harpoon.gotoEditor2"]
+        },
+        {
+            "before": ["<leader>", "w"],
+            "commands": ["vscode-harpoon.gotoEditor3"]
+        },
+        {
+          "before": ["<leader>", "e"],
+          "commands": ["vscode-harpoon.gotoEditor4"]
+        },
+    ],
+    "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}${profileName}",
+    "vim.leader": " ",
+    "[dockercompose]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced",
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "prettier.tabWidth": 4,
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "prettier.printWidth": 120,
+    "git.blame.statusBarItem.enabled": true,
+    "git.blame.editorDecoration.enabled": false,
+    "workbench.colorTheme": "GitHub Dark Default",
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "diffEditor.maxComputationTime": 0,
+    "zenMode.hideLineNumbers": false,
+    "terminal.integrated.suggest.quickSuggestions": false,
 }
