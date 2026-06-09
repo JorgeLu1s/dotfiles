@@ -23,3 +23,7 @@ export EDITOR=nvim
 export PGSERVICE=dockerservice
 
 export DISABLE_SPRING=true
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/jorge/.local/bin:$PATH"
