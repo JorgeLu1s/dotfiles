@@ -1,13 +1,22 @@
-[[keyboard.bindings]]
-action = "ToggleFullscreen"
-key = "F"
-mods = "Control|Shift"
+[keyboard]
+bindings = [
+    {action = "ToggleFullscreen", key = "F", mods = "Control|Shift"},
+    {action = "ToggleViMode", key = "Space", mods = "Control|Shift"},
+    { key = "H", mods = "Control|Alt", chars = "\u001b[D" },
+    { key = "L", mods = "Control|Alt", chars = "\u001b[C" },
+    { key = "J", mods = "Control|Alt", chars = "\u001b[B" },
+    { key = "K", mods = "Control|Alt", chars = "\u001b[A" },
+]
 
 [general]
-import = ["/home/jorge/.config/alacritty/dawnfox.toml"]
+import = ["/home/jorge/.config/alacritty/nordfox.toml"]
 
 [window]
-decorations = "None"
+# decorations = "None"
+decorations = "Buttonless"
+padding = { x = 0, y = 0 }
+dynamic_padding = true
+# opacity = 0.9
 
 [mouse]
 hide_when_typing = true
@@ -16,6 +25,4 @@ hide_when_typing = true
 normal = { family = "FiraCode Nerd Font Mono", style = "Regular" }
 italic = { family = "FiraCode Nerd Font Mono", style = "Retina" }
 bold = { family = "FiraCode Nerd Font Mono", style = "SemiBold" }
-size = 13
-
-[keyboard]
+size = 15
